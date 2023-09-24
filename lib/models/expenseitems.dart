@@ -20,6 +20,8 @@ enum Category {
   utilities,
   @HiveField(5)
   groceries,
+  @HiveField(6)
+  others,
 }
 
 @HiveType(typeId: 2)
@@ -542,12 +544,13 @@ class Currencyhelper {
 }
 
 Map<Category, String> categoryicons = {
-  Category.medical:"lib/icons/medical.png",
-  Category.communication:"lib/icons/networking.png",
+  Category.medical: "lib/icons/medical.png",
+  Category.communication: "lib/icons/networking.png",
   Category.personal: "lib/icons/person.png",
   Category.work: "lib/icons/salary.png",
   Category.utilities: "lib/icons/utility.png",
   Category.groceries: "lib/icons/shopping-bag.png",
+  Category.others: "lib/icons/option.png"
 };
 
 class Expenseitems {
@@ -566,8 +569,8 @@ class Expenseitems {
   String get formatDate {
     return formatter.format(dateTime);
   }
-  
-    @override
+
+  @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Expenseitems &&

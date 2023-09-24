@@ -101,6 +101,7 @@ flutter:
     - lib/icons/salary.png
     - lib/icons/utility.png
     - lib/icons/shopping-bag.png
+    - lib/icons/option.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

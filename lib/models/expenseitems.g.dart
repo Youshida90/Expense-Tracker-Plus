@@ -25,8 +25,11 @@ class CategoryAdapter extends TypeAdapter<Category> {
         return Category.utilities;
       case 5:
         return Category.groceries;
+        case 6: 
+        return Category.others;
       default:
         return Category.medical;
+        
     }
   }
 
@@ -51,6 +54,8 @@ class CategoryAdapter extends TypeAdapter<Category> {
       case Category.groceries:
         writer.writeByte(5);
         break;
+        case Category.others:
+        writer.writeByte(6);
     }
   }
 

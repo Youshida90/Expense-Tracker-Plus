@@ -1,4 +1,6 @@
-import 'package:expense_new_app/Pages/Homepage.dart';
+// ignore_for_file: file_names
+
+import 'package:expense_new_app/Pages/Homepagecontent.dart';
 import 'package:flutter/material.dart';
 import 'package:expense_new_app/models/expense_data.dart';
 import 'package:intl/intl.dart';
@@ -23,7 +25,6 @@ class _EditPageState extends State<EditPage> {
   late Currency _currencyselected;
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
-
   @override
   void initState() {
     super.initState();
@@ -64,21 +65,21 @@ class _EditPageState extends State<EditPage> {
               ),
             ),
             const SizedBox(),
-             SearchChoices.single(
-                items: Currency.values
-                    .map((currency) => DropdownMenuItem(
-                          value: currency,
-                          child: Text(currency.name),
-                        ))
-                    .toList(),
-                value: _currencyselected,
-                onChanged: (newValue) {
-                  setState(() {
-                    _currencyselected = newValue as Currency;
-                  });
-                },
-                isExpanded: true,
-              ),
+            SearchChoices.single(
+              items: Currency.values
+                  .map((currency) => DropdownMenuItem(
+                        value: currency,
+                        child: Text(currency.name),
+                      ))
+                  .toList(),
+              value: _currencyselected,
+              onChanged: (newValue) {
+                setState(() {
+                  _currencyselected = newValue as Currency;
+                });
+              },
+              isExpanded: true,
+            ),
             const SizedBox(
               height: 20,
             ),
@@ -167,7 +168,8 @@ class _EditPageState extends State<EditPage> {
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => const HomePage()),
+                      MaterialPageRoute(
+                          builder: (context) => const Homepagecontent()),
                     );
                   },
                   child: const Text('Cancel'),
@@ -204,7 +206,8 @@ class _EditPageState extends State<EditPage> {
 
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => const HomePage()),
+                      MaterialPageRoute(
+                          builder: (context) => const Homepagecontent()),
                     );
                   },
                   child: const Text('Save Expense'),

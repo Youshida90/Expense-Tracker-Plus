@@ -1,9 +1,8 @@
+import 'package:expense_new_app/Pages/Homepagecontent.dart';
 import 'package:expense_new_app/models/expense_data.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
-
-import 'Pages/Homepage.dart';
 import 'models/expenseitems.dart';
 
 var kColorscheme = ColorScheme.fromSeed(
@@ -73,7 +72,7 @@ class Expensemain extends StatelessWidget {
           ),
         ),
         //? themeMode: ThemeMode.system, (the default)
-        home: const HomePage(),
+        home: const Homepagecontent(),
         debugShowCheckedModeBanner: false,
       ),
     );
