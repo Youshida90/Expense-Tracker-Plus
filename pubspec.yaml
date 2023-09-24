@@ -63,22 +63,20 @@ dev_dependencies:
   build_runner: ^2.4.6
 flutter_launcher_icons:
   android: true
-  ios: true
-  image_path: "lib/images/images.png"
+  image_path: "lib/images/image.png"
+  ios: false
   windows:
-    generate: true
-    image_path: "lib/images/images.png"
-    icon_size: 48 # min:48, max:256, default: 48
+    generate: false
 flutter_native_splash:
   color: "#f7f6f1"
-  image: lib/images/images.png
+  image: lib/images/image.png
   color_dark: "#272727"
-  image_dark: lib/images/images.png
+  image_dark: lib/images/image.png
 
   android_12:
-    image: lib/images/images.png
+    image: lib/images/image.png
     icon_background_color: "#f7f6f1"
-    image_dark: lib/images/images.png
+    image_dark: lib/images/image.png
     icon_background_color_dark: "#272727"
 
   web: false
