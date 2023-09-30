@@ -1,12 +1,17 @@
 import 'dart:collection';
-
+import 'dart:convert';
+import 'package:expense_new_app/Database/hive_db.dart';
+import 'package:expense_new_app/Pages/flagpage.dart';
+import 'package:expense_new_app/chart/chart.dart';
 import 'package:expense_new_app/components/expenselist.dart';
+import 'package:expense_new_app/components/flashbar.dart';
+import 'package:expense_new_app/currency/currencies.dart';
 import 'package:expense_new_app/models/expense_data.dart';
 import 'package:expense_new_app/models/expenseitems.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' as rootBundle;
 import 'package:pattern_formatter/numeric_formatter.dart';
 import 'package:provider/provider.dart';
-import 'package:search_choices/search_choices.dart';
 
 class Homepagecontent extends StatefulWidget {
   const Homepagecontent({super.key});
@@ -18,9 +23,19 @@ class Homepagecontent extends StatefulWidget {
 class _HomepagecontentState extends State<Homepagecontent> {
   DateTime? _selectedDate;
   Category _category = Category.medical;
-  Currency _currencyselected = Currency.USD;
+  List<Currency1> currencies = [];
+  Currency1? currencyselected;
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
+  void _loadCurrencyData() async {
+    final jsondata = await rootBundle.rootBundle
+        .loadString('lib/currencyjsonfile/currency.json');
+    final list = json.decode(jsondata) as List<dynamic>;
+    setState(() {
+      currencies = list.map((e) => Currency1.fromJson(e)).toList();
+    });
+  }
+
   void addnewexpense1() {
     showModalBottomSheet(
       isScrollControlled: true, //? to take the full screen
@@ -43,20 +58,12 @@ class _HomepagecontentState extends State<Homepagecontent> {
                 ),
               ),
               const SizedBox(),
-              SearchChoices.single(
-                items: Currency.values
-                    .map((currency) => DropdownMenuItem(
-                          value: currency,
-                          child: Text(currency.name),
-                        ))
-                    .toList(),
-                value: _currencyselected,
-                onChanged: (newValue) {
+              FlagPage(
+                onCurrencySelected: (currency) {
                   setState(() {
-                    _currencyselected = newValue as Currency;
+                    currencyselected = currency;
                   });
                 },
-                isExpanded: true,
               ),
               const SizedBox(
                 height: 20,
@@ -71,7 +78,8 @@ class _HomepagecontentState extends State<Homepagecontent> {
                         ThousandsFormatter(),
                       ],
                       decoration: InputDecoration(
-                        prefix: Text("${_currencyselected.name}  "),
+                        prefix: Text(
+                            "${currencyselected?.symbol.toString() ?? ''}  "),
                         label: const Text('Amount'),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50),
@@ -187,7 +195,7 @@ class _HomepagecontentState extends State<Homepagecontent> {
                         amount: enteredamount,
                         dateTime: _selectedDate!,
                         category: _category,
-                        currency: _currencyselected,
+                        currency: currencyselected,
                       );
                       Provider.of<ExpenseData>(context, listen: false)
                           .addnewexpense(expenseitem);
@@ -228,6 +236,7 @@ class _HomepagecontentState extends State<Homepagecontent> {
   void initState() {
     super.initState();
     Provider.of<ExpenseData>(context, listen: false).preparedata();
+    _loadCurrencyData();
   }
 
   HashSet<Expenseitems> selecteditems = HashSet();
@@ -245,6 +254,9 @@ class _HomepagecontentState extends State<Homepagecontent> {
 
   @override
   Widget build(BuildContext context) {
+     Widget maincontent = const Center(
+      child: Text('No expenses are found. Start tracking your expense',),
+    );
     return Consumer<ExpenseData>(
       builder: (context, value, child) => Scaffold(
         appBar: AppBar(
@@ -254,52 +266,75 @@ class _HomepagecontentState extends State<Homepagecontent> {
           onPressed: addnewexpense1,
           child: const Icon(Icons.add),
         ),
-        body: ListView(
-          children: [
-            ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: value.getexpense().length,
-              itemBuilder: (context, index) => Expenselist(
-                title: value.getexpense()[index].title,
-                amount: value.getexpense()[index].amount,
-                dateTime: value.getexpense()[index].dateTime,
-                category: value.getexpense()[index].category,
-                selectedcurrency: value.getexpense()[index].currency,
-                isSelected: selecteditems.contains(value.getexpense()[index]),
-                onTap: () {
-                  domuiltipleselection(value.getexpense()[index]);
-                },
-                onLongPress: () {
-                  isselected = true;
-                  domuiltipleselection(value.getexpense()[index]);
-                },
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            selecteditems.isNotEmpty
-                ? ElevatedButton(
-                    onPressed: () {
-                      // Implement deletion logic here
-                      // Loop through the selecteditems set and delete each expense item
-                      for (var selectedExpense in selecteditems) {
-                        delete(selectedExpense);
-                      }
-                      // Clear the selecteditems set and reset isselected flag
-                      selecteditems.clear();
-                      isselected = false;
-
-                      // Force a UI update by calling setState
-                      setState(() {});
+        body:
+            ListView(
+              children: [
+                // Chart(expenses: value.allexpense),
+                maincontent,
+                ListView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: value.getexpense().length,
+                  itemBuilder: (context, index) => Expenselist(
+                    title: value.getexpense()[index].title,
+                    amount: value.getexpense()[index].amount,
+                    dateTime: value.getexpense()[index].dateTime,
+                    category: value.getexpense()[index].category,
+                    selectedcurrency: value.getexpense()[index].currency,
+                    isSelected: selecteditems.contains(value.getexpense()[index]),
+                    onTap: () {
+                      domuiltipleselection(value.getexpense()[index]);
                     },
-                    child: Text("Delete ${selecteditems.length}"),
-                  )
-                : const Text(""),
-          ],
+                    onLongPress: () {
+                      isselected = true;
+                      domuiltipleselection(value.getexpense()[index]);
+                    },
+                  ),
+                ),
+                selecteditems.isNotEmpty
+                    ? ElevatedButton(
+                        onPressed: () {
+                          // Implement deletion logic here
+                          if (selecteditems.isNotEmpty) {
+                            // Create a copy of the selected items to use for undo
+                            final List<Expenseitems> deletedItems =
+                                List.from(selecteditems);
+                            // Loop through the selecteditems set and delete each expense item
+                            for (var selectedExpense in selecteditems) {
+                              delete(selectedExpense);
+                            }
+
+                            // Clear the selecteditems set and reset isselected flag
+                            selecteditems.clear();
+                            isselected = false;
+
+                            // Force a UI update by calling setState
+                            setState(() {});
+
+                            // Show an undo message
+                            FlushBars.undo(
+                              message: "You still have a chance to undo it!",
+                              onUndo: () {
+                                // Undo the deletion by adding the deleted items back
+                                for (var expense in deletedItems) {
+                                  value.getexpense().add(expense);
+                                }
+                                Hivedb hivedb = Hivedb();
+                                hivedb.saveData(deletedItems); 
+                                // Force a UI update by calling setState
+                                setState(() {});
+                                Navigator.pop(context);
+                              },
+                              duration: const Duration(seconds: 6),
+                            ).show(context);
+                          }
+                        },
+                        child: Text("Delete ${selecteditems.length}"),
+                      )
+                    : const Text(""),
+              ],
+            ),
         ),
-      ),
-    );
+      );
   }
 }

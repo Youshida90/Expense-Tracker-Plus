@@ -43,10 +43,10 @@ dependencies:
   flutter_slidable: ^3.0.0
   rename: ^2.1.1
   flutter_native_splash: ^2.3.1
-  search_choices: ^2.2.6
-  google_nav_bar: ^5.0.6
   firebase_core: ^2.15.1
-  
+  cached_network_image: ^3.3.0 
+  flutter_typeahead: ^4.8.0
+  another_flushbar: ^1.12.30
 
 dev_dependencies:
   flutter_test:
@@ -89,7 +89,7 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-  uses-material-design: true
+  uses-material-design: true  
 
   # To add assets to your application, add an assets section, like this:
   assets:
@@ -100,6 +100,8 @@ flutter:
     - lib/icons/utility.png
     - lib/icons/shopping-bag.png
     - lib/icons/option.png
+    - lib/images/image.png
+    - lib/currencyjsonfile/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

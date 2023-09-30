@@ -1,12 +1,14 @@
-// ignore_for_file: file_names
+// // ignore_for_file: file_names
 
 import 'package:expense_new_app/Pages/Homepagecontent.dart';
+import 'package:expense_new_app/Pages/flagpage.dart';
+import 'package:expense_new_app/components/flashbar.dart';
+import 'package:expense_new_app/currency/currencies.dart';
 import 'package:flutter/material.dart';
 import 'package:expense_new_app/models/expense_data.dart';
 import 'package:intl/intl.dart';
 import 'package:pattern_formatter/numeric_formatter.dart';
 import 'package:provider/provider.dart';
-import 'package:search_choices/search_choices.dart';
 
 import '../models/expenseitems.dart';
 
@@ -22,7 +24,8 @@ class EditPage extends StatefulWidget {
 class _EditPageState extends State<EditPage> {
   late DateTime _selectedDate;
   late Category _category;
-  late Currency _currencyselected;
+  late Currency1? currencyselected;
+  late bool undodelete;
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
   @override
@@ -33,12 +36,19 @@ class _EditPageState extends State<EditPage> {
       _amountController.text = widget.expense!.amount.toString();
       _selectedDate = widget.expense!.dateTime;
       _category = widget.expense!.category;
-      _currencyselected = widget.expense!.currency;
+      currencyselected = widget.expense!.currency;
     } else {
       _selectedDate = DateTime.now();
       _category = Category.medical;
-      _currencyselected = Currency.USD;
+      currencyselected = Currency1(symbol: '', code: '', name: '', flag: '');
     }
+  }
+
+  // Method to update selected currency
+  void updateSelectedCurrency(Currency1 currency) {
+    setState(() {
+      currencyselected = currency;
+    });
   }
 
   @override
@@ -65,20 +75,10 @@ class _EditPageState extends State<EditPage> {
               ),
             ),
             const SizedBox(),
-            SearchChoices.single(
-              items: Currency.values
-                  .map((currency) => DropdownMenuItem(
-                        value: currency,
-                        child: Text(currency.name),
-                      ))
-                  .toList(),
-              value: _currencyselected,
-              onChanged: (newValue) {
-                setState(() {
-                  _currencyselected = newValue as Currency;
-                });
+            FlagPage(
+              onCurrencySelected: (currency) {
+                updateSelectedCurrency(currency!);
               },
-              isExpanded: true,
             ),
             const SizedBox(
               height: 20,
@@ -93,7 +93,8 @@ class _EditPageState extends State<EditPage> {
                       ThousandsFormatter(),
                     ],
                     decoration: InputDecoration(
-                      prefix: Text("${_currencyselected.name} "),
+                      prefix:
+                          Text("${currencyselected?.symbol.toString() ?? ''} "),
                       labelText: 'Amount',
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50),
@@ -112,27 +113,29 @@ class _EditPageState extends State<EditPage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        DateFormat.yMMMMd().format(_selectedDate),
-                      ),
-                      IconButton(
-                        onPressed: () async {
-                          final now = DateTime.now();
-                          final firstdate =
-                              DateTime(now.year - 1, now.month, now.day);
-                          final pickedDate = await showDatePicker(
-                            context: context,
-                            initialDate: _selectedDate,
-                            firstDate: firstdate,
-                            lastDate: now,
-                          );
-                          if (pickedDate != null) {
-                            setState(() {
-                              _selectedDate = pickedDate;
-                            });
-                          }
-                        },
-                        icon: const Icon(Icons.date_range),
+                   Text(
+                          DateFormat.yMMMMd().format(_selectedDate),
+                        ),
+                      Expanded(
+                        child: IconButton(
+                          onPressed: () async {
+                            final now = DateTime.now();
+                            final firstdate =
+                                DateTime(now.year - 1, now.month, now.day);
+                            final pickedDate = await showDatePicker(
+                              context: context,
+                              initialDate: _selectedDate,
+                              firstDate: firstdate,
+                              lastDate: now,
+                            );
+                            if (pickedDate != null) {
+                              setState(() {
+                                _selectedDate = pickedDate;
+                              });
+                            }
+                          },
+                          icon: const Icon(Icons.date_range),
+                        ),
                       ),
                     ],
                   ),
@@ -191,7 +194,7 @@ class _EditPageState extends State<EditPage> {
                       amount: enteredAmount,
                       dateTime: _selectedDate,
                       category: _category,
-                      currency: _currencyselected,
+                      currency: currencyselected,
                     );
 
                     if (widget.expense != null) {

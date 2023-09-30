@@ -1,6 +1,8 @@
 import 'dart:collection';
 
-import 'package:expense_new_app/Pages/editpage.dart';
+import 'package:expense_new_app/Pages/Editpage.dart';
+import 'package:expense_new_app/components/flashbar.dart';
+import 'package:expense_new_app/currency/currencies.dart';
 import 'package:expense_new_app/models/expenseitems.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -12,7 +14,7 @@ class Expenselist extends StatefulWidget {
   final double amount;
   final DateTime dateTime;
   final Category category;
-  final Currency selectedcurrency;
+  final Currency1? selectedcurrency;
   final bool isSelected; // New property to pass isSelected status
   final VoidCallback onTap; // New property to handle tap
   final VoidCallback onLongPress; // New property to handle long press
@@ -91,12 +93,16 @@ class _ExpenselistState extends State<Expenselist> {
                   Row(
                     children: [
                       Text(
-                        "${Currencyhelper.getCurrencySymbol(widget.selectedcurrency)} $formattedAmount",
+                        "${widget.selectedcurrency?.symbol ?? ''} $formattedAmount",
                       ),
                       const Spacer(),
                       Row(
                         children: [
-                          Image.asset(categoryicons[widget.category]!,height: 50,width: 40,),
+                          Image.asset(
+                            categoryicons[widget.category]!,
+                            height: 50,
+                            width: 40,
+                          ),
                           const SizedBox(
                             width: 8,
                           ),
@@ -129,7 +135,6 @@ class _ExpenselistState extends State<Expenselist> {
       endActionPane: ActionPane(
         motion: const StretchMotion(),
         children: [
-          // delete button
           SlidableAction(
             onPressed: (context) {
               Navigator.pop(context);

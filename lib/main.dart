@@ -1,4 +1,6 @@
 import 'package:expense_new_app/Pages/Homepagecontent.dart';
+import 'package:expense_new_app/components/flashbar.dart';
+import 'package:expense_new_app/currency/currencies.dart';
 import 'package:expense_new_app/models/expense_data.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -17,7 +19,7 @@ var kDarkColorScheme = ColorScheme.fromSeed(
 void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(CategoryAdapter());
-  Hive.registerAdapter(CurrencyAdapter());
+  Hive.registerAdapter(Currency1Adapter());
   await Hive.openBox("expense_db");
   runApp(const Expensemain());
 }

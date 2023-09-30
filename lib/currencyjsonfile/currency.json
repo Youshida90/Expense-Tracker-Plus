@@ -1,0 +1,38 @@
+[
+  {
+    "code": "USD",
+    "name": "United States Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/united-states.png"
+  },
+  {
+    "code": "EUR",
+    "name": "Euro",
+    "symbol": "€",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/european-union.png"
+  },
+  {
+    "code": "JPY",
+    "name": "Japanese Yen",
+    "symbol": "¥",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/japan.png"
+  },
+  {
+    "code": "GBP",
+    "name": "British Pound",
+    "symbol": "£",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/united-kingdom.png"
+  },
+  {
+    "code": "AUD",
+    "name": "Australian Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/australia.png"
+  },
+  {
+    "code": "CAD",
+    "name": "Canadian Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/canada.png"
+  }
+]

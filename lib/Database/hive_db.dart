@@ -1,10 +1,11 @@
+import 'package:expense_new_app/components/flashbar.dart';
+import 'package:expense_new_app/currency/currencies.dart';
 import 'package:expense_new_app/models/expenseitems.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class Hivedb {
   // Reference to our Box
   final _myBox = Hive.box("expense_db");
-  
   // Reading data
   List<Expenseitems> readData() {
     List<dynamic> savedExpenses = _myBox.get("ALL_EXPENSES") ?? [];
@@ -14,7 +15,7 @@ class Hivedb {
         double amount = savedExpenses[i][1];
         DateTime dateTime = savedExpenses[i][2];
         Category category = savedExpenses[i][3];
-        Currency currency = savedExpenses[i][4];
+        Currency1 currency = savedExpenses[i][4];
         Expenseitems expense = Expenseitems(
         title: name,
         amount: amount,
