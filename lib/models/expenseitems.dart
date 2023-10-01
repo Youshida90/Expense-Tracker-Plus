@@ -1,6 +1,5 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:expense_new_app/components/flashbar.dart';
 import 'package:expense_new_app/currency/currencies.dart';
 import 'package:intl/intl.dart';
 import 'package:hive_flutter/hive_flutter.dart';

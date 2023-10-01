@@ -1,7 +1,6 @@
 import 'dart:collection';
 
 import 'package:expense_new_app/Pages/Editpage.dart';
-import 'package:expense_new_app/components/flashbar.dart';
 import 'package:expense_new_app/currency/currencies.dart';
 import 'package:expense_new_app/models/expenseitems.dart';
 import 'package:flutter/material.dart';

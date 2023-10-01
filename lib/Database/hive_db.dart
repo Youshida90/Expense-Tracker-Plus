@@ -1,4 +1,3 @@
-import 'package:expense_new_app/components/flashbar.dart';
 import 'package:expense_new_app/currency/currencies.dart';
 import 'package:expense_new_app/models/expenseitems.dart';
 import 'package:hive_flutter/hive_flutter.dart';
