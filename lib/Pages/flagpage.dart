@@ -16,6 +16,7 @@ class FlagPage extends StatefulWidget {
 class _FlagPageState extends State<FlagPage> {
   List<Currency1> currencies = [];
   TextEditingController _searchController = TextEditingController();
+  // ignore: unused_field
   List<Currency1> _suggestedCurrencies = [];
 
   @override
