@@ -254,8 +254,10 @@ class _HomepagecontentState extends State<Homepagecontent> {
 
   @override
   Widget build(BuildContext context) {
-     Widget maincontent = const Center(
-      child: Text('No expenses are found. Start tracking your expense',),
+    Widget maincontent = const Center(
+      child: Text(
+        'No expenses are found. Start tracking your expense',
+      ),
     );
     return Consumer<ExpenseData>(
       builder: (context, value, child) => Scaffold(
@@ -266,75 +268,74 @@ class _HomepagecontentState extends State<Homepagecontent> {
           onPressed: addnewexpense1,
           child: const Icon(Icons.add),
         ),
-        body:
-            ListView(
-              children: [
-                // Chart(expenses: value.allexpense),
-                maincontent,
-                ListView.builder(
-                  physics: const BouncingScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: value.getexpense().length,
-                  itemBuilder: (context, index) => Expenselist(
-                    title: value.getexpense()[index].title,
-                    amount: value.getexpense()[index].amount,
-                    dateTime: value.getexpense()[index].dateTime,
-                    category: value.getexpense()[index].category,
-                    selectedcurrency: value.getexpense()[index].currency,
-                    isSelected: selecteditems.contains(value.getexpense()[index]),
-                    onTap: () {
-                      domuiltipleselection(value.getexpense()[index]);
-                    },
-                    onLongPress: () {
-                      isselected = true;
-                      domuiltipleselection(value.getexpense()[index]);
-                    },
-                  ),
-                ),
-                selecteditems.isNotEmpty
-                    ? ElevatedButton(
-                        onPressed: () {
-                          // Implement deletion logic here
-                          if (selecteditems.isNotEmpty) {
-                            // Create a copy of the selected items to use for undo
-                            final List<Expenseitems> deletedItems =
-                                List.from(selecteditems);
-                            // Loop through the selecteditems set and delete each expense item
-                            for (var selectedExpense in selecteditems) {
-                              delete(selectedExpense);
+        body: ListView(
+          children: [
+            // Chart(expenses: value.allexpense),
+            maincontent,
+            ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: value.getexpense().length,
+              itemBuilder: (context, index) => Expenselist(
+                title: value.getexpense()[index].title,
+                amount: value.getexpense()[index].amount,
+                dateTime: value.getexpense()[index].dateTime,
+                category: value.getexpense()[index].category,
+                selectedcurrency: value.getexpense()[index].currency,
+                isSelected: selecteditems.contains(value.getexpense()[index]),
+                onTap: () {
+                  domuiltipleselection(value.getexpense()[index]);
+                },
+                onLongPress: () {
+                  isselected = true;
+                  domuiltipleselection(value.getexpense()[index]);
+                },
+              ),
+            ),
+            selecteditems.isNotEmpty
+                ? ElevatedButton(
+                    onPressed: () {
+                      // Implement deletion logic here
+                      if (selecteditems.isNotEmpty) {
+                        // Create a copy of the selected items to use for undo
+                        final List<Expenseitems> deletedItems =
+                            List.from(selecteditems);
+                        // Loop through the selecteditems set and delete each expense item
+                        for (var selectedExpense in selecteditems) {
+                          delete(selectedExpense);
+                        }
+
+                        // Clear the selecteditems set and reset isselected flag
+                        selecteditems.clear();
+                        isselected = false;
+
+                        // Force a UI update by calling setState
+                        setState(() {});
+
+                        // Show an undo message
+                        FlushBars.undo(
+                          message: "You still have a chance to undo it!",
+                          onUndo: () {
+                            // Undo the deletion by adding the deleted items back
+                            for (var expense in deletedItems) {
+                              value.getexpense().add(expense);
                             }
-
-                            // Clear the selecteditems set and reset isselected flag
-                            selecteditems.clear();
-                            isselected = false;
-
+                            Hivedb hivedb = Hivedb();
+                            hivedb.saveData(deletedItems);
                             // Force a UI update by calling setState
                             setState(() {});
-
-                            // Show an undo message
-                            FlushBars.undo(
-                              message: "You still have a chance to undo it!",
-                              onUndo: () {
-                                // Undo the deletion by adding the deleted items back
-                                for (var expense in deletedItems) {
-                                  value.getexpense().add(expense);
-                                }
-                                Hivedb hivedb = Hivedb();
-                                hivedb.saveData(deletedItems); 
-                                // Force a UI update by calling setState
-                                setState(() {});
-                                Navigator.pop(context);
-                              },
-                              duration: const Duration(seconds: 6),
-                            ).show(context);
-                          }
-                        },
-                        child: Text("Delete ${selecteditems.length}"),
-                      )
-                    : const Text(""),
-              ],
-            ),
+                            Navigator.pop(context);
+                          },
+                          duration: const Duration(seconds: 6),
+                        ).show(context);
+                      }
+                    },
+                    child: Text("Delete ${selecteditems.length}"),
+                  )
+                : const Text(""),
+          ],
         ),
-      );
+      ),
+    );
   }
 }

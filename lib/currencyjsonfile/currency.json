@@ -34,5 +34,689 @@
     "name": "Canadian Dollar",
     "symbol": "$",
     "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/canada.png"
+  },
+   {
+    "code": "CHF",
+    "name": "Switzerland Franc",
+    "symbol": "CHF", 
+    "flag":"https://raw.githubusercontent.com/Youshida90/icons/main/switzerland.png"
+  },
+  {
+    "code": "CNY",
+    "name": "China Yuan Renminbi",
+    "symbol": "¥",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/china.png"
+  },
+  {
+    "code": "HKD",
+    "name": "Hong Kong Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/hong-kong.png"
+  },
+  {
+    "code": "NZD",
+    "name": "New Zealand Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/new-zealand.png"
+  },
+  {
+    "code": "SEK",
+    "name": "Sweden Krona",
+    "symbol": "kr",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/sweden.png"
+  },
+  {
+    "code": "KRW",
+    "name": "South Korea Won",
+    "symbol": "₩",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/south-korea.png"
+  },
+  {
+    "code": "SGD",
+    "name": "Singapore Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/singapore.png"
+  },
+  {
+    "code": "NOK",
+    "name": "Norway Krone",
+    "symbol": "kr",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/norway.png"
+  },
+  {
+    "code": "MXN",
+    "name": "Mexico Peso",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/mexico.png"
+  },
+  {
+    "code": "INR",
+    "name": "Indian Rupee",
+    "symbol": "₹",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/india.png"
+  },
+  {
+    "code": "RUB",
+    "name": "Russia Ruble",
+    "symbol": "₽",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/russia.png"
+  },
+  {
+    "code": "ZAR",
+    "name": "South Africa Rand",
+    "symbol": "R",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/south-africa.png"
+  },
+  {
+    "code": "TRY",
+    "name": "Turkish Lira",
+    "symbol": "₺",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/turkey.png"
+  },
+  {
+    "code": "BRL",
+    "name": "Brazilian Real",
+    "symbol": "R$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/brazil.png"
+  },
+  {
+    "code": "TWD",
+    "name": "Taiwan New Dollar",
+    "symbol": "NT$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/taiwan.png"
+  },
+  {
+    "code": "DKK",
+    "name": "Denmark Krone",
+    "symbol": "kr",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/denmark.png"
+  },
+  {
+    "code": "PLN",
+    "name": "Poland Zloty",
+    "symbol": "zł",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/poland.png"
+  },
+  {
+    "code": "THB",
+    "name": "Thailand Baht",
+    "symbol": "฿",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/thailand.png"
+  },
+  {
+    "code": "IDR",
+    "name": "Indonesia Rupiah",
+    "symbol": "Rp",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/indonesia.png"
+  },
+  {
+    "code": "HUF",
+    "name": "Hungary Forint",
+    "symbol": "Ft",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/hungary.png"
+  },
+  {
+    "code": "CZK",
+    "name": "Czech Koruna",
+    "symbol": "Kč",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/czech-republic.png"
+  },
+  {
+    "code": "ILS",
+    "name": "Shekel",
+    "symbol": "₪",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/palestine.png"
+  },
+  {
+    "code": "CLP",
+    "name": "Chile Peso",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/chile.png"
+  },
+  {
+    "code": "PHP",
+    "name": "Philippines Peso",
+    "symbol": "₱",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/philippines.png"
+  },
+  {
+    "code": "AED",
+    "name": "Emirati Dirham",
+    "symbol": "د.إ",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/united-arab-emirates.png"
+  },
+  {
+    "code": "COP",
+    "name": "Colombia Peso",
+    "symbol": " $",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/colombia.png"
+  },
+  {
+    "code": "SAR",
+    "name": "Saudi Arabia Riyal",
+    "symbol": "﷼",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/saudi-arabia.png"
+  },
+  {
+    "code": "MYR",
+    "name": "Malaysia Ringgit",
+    "symbol": "RM",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/malaysia.png"
+  },
+  {
+    "code": "RON",
+    "name": "Romania Leu",
+    "symbol": "L",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/romania.png"
+  },
+  {
+    "code": "AFN",
+    "name": "Afghanistan Afghani",
+    "symbol": "؋",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/afghanistan.png"
+  },
+  {
+    "code": "ALL",
+    "name": "Albanian Lek",
+    "symbol": "Lek",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/albania.png"
+  },
+  {
+    "code": "DZD",
+    "name": "Algerian dinar",
+    "symbol": "دج",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/algeria.png"
+  },
+  {
+    "code": "ARS",
+    "name": "Argentine Peso",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/argentina.png"
+  },
+  {
+    "code": "AMD",
+    "name": "Armenian Dram",
+    "symbol": "֏",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/armenia.png"
+  },
+  {
+    "code": "AZN",
+    "name": "Azerbaijani Manat",
+    "symbol": "₼",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/azerbaijan.png"
+  },
+  {
+    "code": "BHD",
+    "name": "Bahraini Dinar",
+    "symbol": "BD",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/bahrain.png"
+  },
+  {
+    "code": "BDT",
+    "name": "Bangladeshi Taka",
+    "symbol": "৳",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/bangladesh.png"
+  },
+  {
+    "code": "BBD",
+    "name": "Barbados Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/barbados.png"
+  },
+  {
+    "code": "BYN",
+    "name": "Belarussian Ruble",
+    "symbol": "Br",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/belarus.png"
+  },
+  {
+    "code": "BZD",
+    "name": "Belize Dollar",
+    "symbol": "BZ$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/belize.png"
+  },
+  {
+    "code": "BMD",
+    "name": "Bermuda Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/bermuda.png"
+  },
+  {
+    "code": "BTN",
+    "name": "Bhutanese Ngultrum",
+    "symbol": "Nu.",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/bhutan.png"
+  },
+  {
+    "code": "BOB",
+    "name": "Bolivia Bolíviano",
+    "symbol": "$b",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/bolivia.png"
+  },
+  {
+    "code": "BAM",
+    "name": "Bosnia and Herzegovina convertible mark",
+    "symbol": "KM",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/bosnia-and-herzegovina.png"
+  },
+  {
+    "code": "BWP",
+    "name": "Botswanan Pula",
+    "symbol": "P",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/botswana.png"
+  },
+  {
+    "code": "BND",
+    "name": "Brunei Darussalam Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/brunei.png"
+  },
+  {
+    "code": "BGN",
+    "name": "Bulgarian Lev",
+    "symbol": "лв",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/bulgaria.png"
+  },
+  {
+    "code": "BIF",
+    "name": "Burundian Franc",
+    "symbol": "FBu",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/burundi.png"
+  },
+  {
+    "code": "KHR",
+    "name": "Cambodian riel",
+    "symbol": "៛",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/cambodia.png"
+  },
+  {
+    "code": "KYD",
+    "name": "Cayman Islands Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/cayman-islands.png"
+  },
+  {
+    "code": "XAF",
+    "name": "Central African CFA franc",
+    "symbol": "FCFA",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/central-african-republic.png"
+  },
+  {
+    "code": "CDF",
+    "name": "Congolese franc",
+    "symbol": "FC",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/democratic-republic-of-congo.png"
+  },
+  {
+    "code": "CRC",
+    "name": "Costa Rica Colon",
+    "symbol": "₡",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/costa-rica.png"
+  },
+  {
+    "code": "DOP",
+    "name": "Dominican Republic Peso",
+    "symbol": "RD$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/dominican-republic.png"
+  },
+  {
+    "code": "DJF",
+    "name": "Djibouti Franc",
+    "symbol": "Fdj",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/djibouti.png"
+  },
+  {
+    "code": "EGP",
+    "name": "Egypt Pound",
+    "symbol": "£",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/egypt.png"
+  },
+  {
+    "code": "ETB",
+    "name": "Ethiopian Birr",
+    "symbol": "Br",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/ethiopia.png"
+  },
+  {
+    "code": "GMD",
+    "name": "Gambian dalasi",
+    "symbol": "D",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/gambia.png"
+  },
+  {
+    "code": "GEL",
+    "name": "Georgian Lari",
+    "symbol": "₾",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/georgia.png"
+  },
+  {
+    "code": "GHS",
+    "name": "Ghana Cedi",
+    "symbol": "₵",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/ghana.png"
+  },
+  {
+    "code": "GTQ",
+    "name": "Guatemalan quetzal",
+    "symbol": "Q",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/guatemala.png"
+  },
+  {
+    "code": "GYD",
+    "name": "Guyana Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/guyana.png"
+  },
+  {
+    "code": "HTG",
+    "name": "Haitian gourde",
+    "symbol": "G",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/haiti.png"
+  },
+  {
+    "code": "ISK",
+    "name": "Iceland Krona",
+    "symbol": "kr",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/iceland.png"
+  },
+  {
+    "code": "IRN",
+    "name": " Iranian Rial",
+    "symbol": "﷼",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/iran.png"
+  },
+  {
+    "code": "IQD",
+    "name": "Iraqi Dinar",
+    "symbol": "د.ع",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/iraq.png"
+  },
+  {
+    "code": "JMD",
+    "name": "Jamaica Dollar",
+    "symbol": "J$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/jamaica.png"
+  },
+  {
+    "code": "JOD",
+    "name": "Jordanian dinar",
+    "symbol": "د.أ",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/jordan.png"
+  },
+  {
+    "code": "KZT",
+    "name": "Kazakhstan Tenge",
+    "symbol": "〒",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/kazakhstan.png"
+  },
+  {
+    "code": "KES",
+    "name": "Kenyan Shilling",
+    "symbol": "KSh",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/kenya.png"
+  },
+  {
+    "code": "KWD",
+    "name": "Kuwaiti Dinar",
+    "symbol": "د.ك",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/kuwait.png"
+  },
+  {
+    "code": "KGS",
+    "name": "Kyrgyzstani som",
+    "symbol": "с",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/kyrgyzstan.png"
+  },
+  {
+    "code": "LAK",
+    "name": "Laos Kip",
+    "symbol": "₭",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/laos.png"
+  },
+  {
+    "code": "LRD",
+    "name": "Liberia Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/liberia.png"
+  },
+  {
+    "code": "LBP",
+    "name": "lebanese lira",
+    "symbol": "ل.ل",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/lebanon.png"
+  },
+  {
+    "code": "MKD",
+    "name": "Macedonia Denar",
+    "symbol": "ден",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/republic-of-macedonia.png"
+  },
+  {
+    "code": "MWK",
+    "name": "Malawian Kwacha",
+    "symbol": "MK",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/malawi.png"
+  },
+  {
+    "code": "MYS",
+    "name": "Ringgit",
+    "symbol": "RM",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/malaysia.png"
+  },
+  {
+    "code": "MUR",
+    "name": "Mauritius Rupee",
+    "symbol": "₨",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/mauritius.png"
+  },
+  {
+    "code": "MDL",
+    "name": "Moldovan Leu",
+    "symbol": "L",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/moldova.png"
+  },
+  {
+    "code": "MNT",
+    "name": "Mongolia Tughrik",
+    "symbol": "₮",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/mongolia.png"
+  },
+  {
+    "code": "MAD",
+    "name": "Moroccan Dirham",
+    "symbol": "MAD",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/morocco.png"
+  },
+  {
+    "code": "MZN",
+    "name": "Mozambique Metical",
+    "symbol": "MT",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/mozambique.png"
+  },
+  {
+    "code": "MMK",
+    "name": "Myanmar Kyat",
+    "symbol": "Ks",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/myanmar.png"
+  },
+  {
+    "code": "MRU",
+    "name": "Mauritanian ouguiya",
+    "symbol": "UM",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/mauritania.png"
+  },
+  {
+    "code": "NAD",
+    "name": "Namibia Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/namibia.png"
+  },
+  {
+    "code": "NPR",
+    "name": "Nepal Rupee",
+    "symbol": "₨",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/nepal.png"
+  },
+  {
+    "code": "NIO",
+    "name": "Nicaragua Cordoba",
+    "symbol": "C$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/nicaragua.png"
+  },
+  {
+    "code": "NGN",
+    "name": "Nigeria Naira",
+    "symbol": "₦",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/nigeria.png"
+  },
+  {
+    "code": "OMR",
+    "name": "Oman Rial",
+    "symbol": "﷼",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/oman.png"
+  },
+  {
+    "code": "PKR",
+    "name": "Pakistan Rupee",
+    "symbol": "₨",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/pakistan.png"
+  },
+  {
+    "code": "PGK",
+    "name": "Papua New Guinean Kina",
+    "symbol": "K",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/papua-new-guinea.png"
+  },
+  {
+    "code": "PYG",
+    "name": "Paraguay Guarani",
+    "symbol": "₲",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/paraguay.png"
+  },
+  {
+    "code": "PEN",
+    "name": "Peru Sol",
+    "symbol": "S/.",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/peru.png"
+  },
+  {
+    "code": "QAR",
+    "name": "Qatar Riyal",
+    "symbol": "﷼",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/qatar.png"
+  },
+  {
+    "code": "RWF",
+    "name": "Rwandan franc",
+    "symbol": "FRw",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/rwanda.png"
+  },
+  {
+    "code": "RSD",
+    "name": "Serbia Dinar",
+    "symbol": "Дин.",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/serbia.png"
+  },
+  {
+    "code": "SCR",
+    "name": "Seychellois rupee",
+    "symbol": "₨",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/seychelles.png"
+  },
+  {
+    "code": "SOS",
+    "name": "Somalia Shilling",
+    "symbol": "S",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/somalia.png"
+  },
+  {
+    "code": "SDG",
+    "name": "Sudanese pound",
+    "symbol": "ج.س",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/sudan.png"
+  },
+  {
+    "code": "LKR",
+    "name": "Sri Lanka Rupee",
+    "symbol": "₨",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/srilanka.png"
+  },
+  {
+    "code": "SRD",
+    "name": "Suriname Dollar",
+    "symbol": "$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/suriname.png"
+  },
+  {
+    "code": "SYP",
+    "name": "Syrian Lira",
+    "symbol": "LS",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/syria.png"
+  },
+  {
+    "code": "TZS",
+    "name": "Tanzanian Shilling",
+    "symbol": "TSh",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/tanzania.png"
+  },
+  {
+    "code": "TTD",
+    "name": "Trinidad and Tobago Dollar",
+    "symbol": "TT$",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/trinidad-and-tobago.png"
+  },
+  {
+    "code": "TND",
+    "name": "Tunisian dinar",
+    "symbol": "د.ت",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/tunisia.png"
+  },
+  {
+    "code": "UGX",
+    "name": "Ugandan Shilling",
+    "symbol": "USh",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/uganda.png"
+  },
+  {
+    "code": "UAH",
+    "name": "Ukraine Hryvnia",
+    "symbol": "₴",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/ukraine.png"
+  },
+  {
+    "code": "UYU",
+    "name": "Uruguay Peso",
+    "symbol": "$U",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/uruguay.png"
+  },
+  {
+    "code": "VEF",
+    "name": "Venezuela Bolívar",
+    "symbol": "Bs",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/venezuela.png"
+  },
+  {
+    "code": "VND",
+    "name": "Viet Nam Dong",
+    "symbol": "₫",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/vietnam.png"
+  },
+  {
+    "code": "YER",
+    "name": "Yemen Rial",
+    "symbol": "﷼",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/yemen.png"
+  },
+  {
+    "code": "ZMW",
+    "name": "Zambian kwacha",
+    "symbol": "ZK",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/zambia.png"
+  },
+  {
+    "code": "ZWL",
+    "name": "Zimbabwean Dollar",
+    "symbol": "$ZWL",
+    "flag": "https://raw.githubusercontent.com/Youshida90/icons/main/zimbabwe.png"
   }
 ]
