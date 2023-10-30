@@ -34,8 +34,6 @@ class Chart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode =
-        MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Container(
       margin: const EdgeInsets.all(16),
       padding: const EdgeInsets.symmetric(
@@ -71,26 +69,22 @@ class Chart extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          // Row(
-          //   children: buckets
-          //       .map(
-          //         (bucket) => Expanded(
-          //           child: Padding(
-          //             padding: const EdgeInsets.symmetric(horizontal: 4),
-          //             child: Icon(
-          //               categoryicons[bucket.category] as IconData?,
-          //               color: isDarkMode
-          //                   ? Theme.of(context).colorScheme.secondary
-          //                   : Theme.of(context)
-          //                       .colorScheme
-          //                       .primary
-          //                       .withOpacity(0.7),
-          //             ),
-          //           ),
-          //         ),
-          //       )
-          //       .toList(),
-          // )
+          Row(
+            children: buckets
+                .map(
+                  (bucket) => Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                      child: Image.asset(
+                        categoryicons[bucket.category]!,
+                        width: 50,
+                        height: 40,
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
+          )
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'dart:collection';
 import 'dart:convert';
+import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:expense_new_app/Database/hive_db.dart';
 import 'package:expense_new_app/Pages/flagpage.dart';
 import 'package:expense_new_app/chart/chart.dart';
@@ -111,7 +112,7 @@ class _HomepagecontentState extends State<Homepagecontent> {
                               context: context,
                               initialDate: now,
                               firstDate: firstdate,
-                              lastDate: now,
+                              lastDate: DateTime(2200),
                             );
                             setState(() {
                               _selectedDate = pickedDate;
@@ -177,7 +178,7 @@ class _HomepagecontentState extends State<Homepagecontent> {
                           builder: (ctx) => AlertDialog(
                             title: const Text('Invalid input'),
                             content: const Text(
-                                'Please make sure a valid title, amount,date'),
+                                'Please make sure a valid title, amount,date,currency'),
                             actions: [
                               TextButton(
                                 onPressed: () {
@@ -254,6 +255,17 @@ class _HomepagecontentState extends State<Homepagecontent> {
 
   @override
   Widget build(BuildContext context) {
+    final AnimationController _controller12 = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    )..repeat(reverse: true);
+    final Animation<Offset> _offsetAnimation = Tween<Offset>(
+      begin: Offset.zero,
+      end: const Offset(1.5, 0.0),
+    ).animate(CurvedAnimation(
+      parent: _controller12,
+      curve: Curves.elasticIn,
+    ));
     Widget maincontent = const Center(
       child: Text(
         'No expenses are found. Start tracking your expense',
@@ -263,6 +275,12 @@ class _HomepagecontentState extends State<Homepagecontent> {
       builder: (context, value, child) => Scaffold(
         appBar: AppBar(
           title: const Text('Expense Tracker Plus'),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.filter_list),
+            ),
+          ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: addnewexpense1,
@@ -270,8 +288,33 @@ class _HomepagecontentState extends State<Homepagecontent> {
         ),
         body: ListView(
           children: [
-            // Chart(expenses: value.allexpense),
-            maincontent,
+            Chart(expenses: value.allexpense),
+               EasyDateTimeLine(
+                initialDate: DateTime.now(),
+                onDateChange: (selectedDate) {
+                  //`selectedDate` the new date selected.
+                },
+                headerProps: const EasyHeaderProps(
+                  monthPickerType: MonthPickerType.switcher,
+                  selectedDateFormat: SelectedDateFormat.fullDateDMY,
+                ),
+                dayProps: const EasyDayProps(
+                  dayStructure: DayStructure.dayStrDayNum,
+                  activeDayStyle: DayStyle(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Color(0xff3371FF),
+                          Color(0xff8426D6),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ListView.builder(
               physics: const BouncingScrollPhysics(),
               shrinkWrap: true,
